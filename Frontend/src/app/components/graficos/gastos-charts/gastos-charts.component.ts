@@ -21,10 +21,8 @@ export class GastosChartsComponent {
   ];
   columnNames = ['Browser', 'Percentage'];
   options = {    
-    backgroundColor: '#212529',
-    textStyle:{color: '#FFF'},
+    textStyle:{color: '#FFFFFF'},
     width: 650,
-    height: 250,
-    is3D: true
+    height: 250
   };
 }

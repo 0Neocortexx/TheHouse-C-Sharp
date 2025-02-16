@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<div>
+    <div class="novaCompra">
+        <button type="button" class="btn btn-light">Nova Compra</button>
+    </div>
+    
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Identificador</th>
+                    <th>Link da Nota</th>
+                    <th>Valor Pago</th>
+                    <th>Data Da Compra</th>
+                    <th>Mercado</th>
+                    <th>Lista de compra Utilizada</th>
+                </tr>
+            </thead>
+        
+            <tbody>
+                <tr *ngFor="let item of compras">
+                    <td> {{ item.id }}</td>
+                    <td> {{ item.linkNota }} </td>
+                    <td> {{ item.valorPago }} </td>
+                    <td> {{ item.dataCompra }} </td>
+                    <td> {{ item.mercado.nome }} </td>
+                    <td> {{ item.listaCompra.nome }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

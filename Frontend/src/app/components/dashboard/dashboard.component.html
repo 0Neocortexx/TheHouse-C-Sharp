@@ -1,23 +1,23 @@
-<app-navbar></app-navbar>
-
-<div class="content">
-   <section class="section-1 bg-secondary rounded">
-      <div style="width: 30%; height: 100%; font-size: 14px;">
-         <app-calendario></app-calendario>
+<div>
+   <app-navbar></app-navbar>
+   <div class="d-flex">
+      <div class="w-50 d-flex flex-column justify-content-center align-items-center gap-3">
+         <app-entretenimentos></app-entretenimentos>
+         <app-gastos-charts></app-gastos-charts>
       </div>
-
-      <div style="width: 50%; display: flex; align-items: center; justify-content: space-between; flex-direction: column;">
-         <div class="rounded">
-            <app-entretenimentos></app-entretenimentos>
-         </div>
-         <div class="rounded">
-            <app-gastos-charts></app-gastos-charts>
+      
+      <div class="w-50 h-100 d-flex justify-content-center align-items-center">
+         <div class="w-75 h-100 border border-light">
+            <app-calendario></app-calendario>
          </div>
       </div>
+   </div>
+   
+   <div class="d-flex w-100 d-flex justify-content-center align-items-center border border-light">
+      <div>
+         <app-gastos-year-time-line></app-gastos-year-time-line>
+      </div>
+   </div>
 
-   </section>
-
-   <section class="section-2">
-      <app-gastos-year-time-line class="w-100"></app-gastos-year-time-line>
-   </section>
+   <app-footer></app-footer>
 </div>

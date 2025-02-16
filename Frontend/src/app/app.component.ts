@@ -11,9 +11,6 @@ import { CommonModule } from '@angular/common';
   imports: [RouterOutlet, SweetAlert2Module, LoadingComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
-  // template: `
-  // <h1> hello world </h1>
-  // `
 })
 export class AppComponent {
   title = 'The House';

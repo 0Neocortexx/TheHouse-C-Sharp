@@ -1,0 +1,19 @@
+th {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+td {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+.novaCompra {
+    padding: 20px;
+    display: flex;
+    justify-content: end;
+}
+
+body {
+    display: flex;
+}

@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { TheHouseService } from '../../services/the-house.service';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
+import { CadastroService } from '../../services/userGroup/cadastro/cadastro.service';
+import { ValidaEmailService } from '../../services/userGroup/validarEmail/valida-email.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -13,16 +14,16 @@ import Swal from 'sweetalert2';
 })
 export class CadastroComponent {
 
-  service = inject(TheHouseService);
+  service = inject(CadastroService);
 
   nome: string = '';
   email: string = '';
   senha: string = '';
 
-  
+  validaEmail = inject(ValidaEmailService);
 
   cadastro() {
-    if(this.service.validaEmail(this.email)) {
+    if(this.validaEmail.validaEmail(this.email)) {
         this.service.cadastro(this.nome, this.email, this.senha);
     } else {
       Swal.fire({

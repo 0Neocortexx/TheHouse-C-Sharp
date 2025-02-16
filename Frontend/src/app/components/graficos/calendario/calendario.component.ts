@@ -1,30 +1,34 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 import { FullCalendarModule } from '@fullcalendar/angular';
-import dayGridPlugin from '@fullcalendar/daygrid';
 import { CalendarOptions } from '@fullcalendar/core';
-import allLocales from '@fullcalendar/core/locales-all';
-import bootstrap5Plugin  from '@fullcalendar/bootstrap5';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+
 
 @Component({
   selector: 'app-calendario',
   standalone: true,
   imports: [
-    FullCalendarModule
+    FullCalendarModule,
+    CommonModule
   ],
   templateUrl: './calendario.component.html',
   styleUrl: './calendario.component.css'
 })
 export class CalendarioComponent {
-  
   calendarOptions: CalendarOptions = {
-    themeSystem: 'bootstrap5',
     initialView: 'dayGridMonth',
-    locales: allLocales,
-    locale: 'br', // the initial locale
-    plugins: [dayGridPlugin, bootstrap5Plugin],
+    plugins: [dayGridPlugin, interactionPlugin],
+    dateClick: (arg) => this.handleDateClick(arg),
     events: [
-      { title: 'Pagamento de boleto', date: '2024-11-22' },
+      { title: 'event 1', date: '2025-01-24' },
       { title: 'event 2', date: '2019-04-02' }
     ]
   };
+
+  handleDateClick(arg:any) {
+    alert('date click! ' + arg.dateStr)
+  }
 }
